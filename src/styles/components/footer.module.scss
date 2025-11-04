@@ -1,0 +1,51 @@
+@use "../globalStyles.module.scss" as *;
+
+.footer {
+    background-color: $base-color-01;
+    margin-top: 118px;
+
+    @media (max-width: 375px) {
+        margin-top: 70px;
+    }
+
+    .footer_content {
+        display: flex;
+        justify-content: space-between;
+        background-color: $base-color-01;
+        
+        .footer_logo {
+
+            img{
+                transform: translate(0px, -10px);
+
+                @media (max-width: 375px) {
+                    max-width: 111px ;
+                }
+            }
+            
+        }
+
+        .footer_contacts {
+            margin: 25px 25px 25px 0px;
+            text-align: right;
+            
+
+            p {
+                color: $base-color-03;
+
+                &:last-child {
+                    margin-top: 20px;
+                    font-size: 12px;
+                    line-height: 14.5px;
+                }
+            }
+
+            @media (max-width: 375px) {
+                margin: 25px 5px 25px 0px;
+            }
+
+        }
+    }
+}
+
+

@@ -1,0 +1,238 @@
+@use "../globalStyles.module.scss" as *;
+
+.container {
+    display: grid; 
+    grid-template-columns: 2fr 1fr;
+    column-gap: 20px;
+
+    .info {
+        position: relative;
+        h1 {
+            margin-bottom: 13px;
+            font-family: Ferry ,serif;
+            font-size: 40px;
+            line-height: 48px;
+        }
+    }
+    .info_image{
+        position: absolute;
+        top: 35%;
+        left: 21%;
+    }
+
+    .form_container {
+        position: relative;
+        margin-right: 81px;
+        display: grid;
+        grid-template-columns: 429px;
+        
+        .form_img{
+            position: absolute;
+            top: -55px;
+            left: -51px;
+        }
+        .form {
+            display: grid;
+            padding: 17px 25px 20px 25px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            .header{
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+                margin-bottom: 40px;
+                column-gap: 15px;
+                p{
+                    padding: 8px 0px;
+                    text-align: center;
+                    border-bottom: solid 2px $base-color-01;
+                    font-size: 16px;
+                    line-height: 19.36px;
+
+                    &:last-child{
+                        color: rgba(199, 199, 199, 1);
+                        border-bottom: solid 2px rgba(199, 199, 199, 1);
+
+                    }
+                    
+                }
+
+            }
+            .fields{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                 
+                label{
+                    color: rgba(148, 148, 148, 1);
+                    font-size: 16px;
+                    line-height: 19.36px;
+                       
+                }
+                .fields_input{
+                    font-size: 16px;
+                    line-height: 19.36px;
+                    margin-bottom: 20px;
+
+                    &:last-of-type{
+                        margin-bottom: 30px;
+                    }
+                        
+                    margin-top: 15px;
+                    border: 1px solid rgba(199, 199, 199, 1);
+                    border-radius: 5px;
+                    padding: 12px 0px 12px 19px;
+                    &:has(+ span){
+                        border: 1px solid red;
+                        margin-bottom: 5px !important;
+                    }
+                }
+                
+                .errorMessage{
+                    color: red;
+                    margin-bottom: 2px;
+                    text-align: center;
+                    &:has(+ button){
+                        margin-bottom: 30px;
+                    }   
+                }
+                .buttonsubmit{
+                    padding: 15px 0px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: rgba(89, 112, 255, 1);
+                    color: $base-color-03;
+                    font-size: 22px;
+                    line-height: 26.6px;
+                    &:disabled{
+                        background-color:rgba(89, 112, 255, 0.4);
+                    }
+                }
+            }
+            .links{
+                text-align: center;
+
+                a{
+                    border-bottom: 1px solid $additional-color-03;
+                    color: $additional-color-03;
+
+                    &:hover{
+                        cursor: default;
+                    }
+                    
+                }
+
+                p{
+                    font-size: 16px;
+                    line-height: 19.3px;
+                    margin-top: 37px;
+                    color: rgba(148, 148, 148, 1);
+                    margin-bottom: 15px;
+                    text-align: left;
+                }
+            }
+            .links_buttons{
+                display: flex;
+                column-gap: 10px;
+
+                button{
+                    background: $base-color-03;
+                    border: 1px solid rgba(89, 112, 255, 0.51);
+                    border-radius: 3px;
+                    
+                    
+                    img{
+                        padding-top: 4px;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+// ==================== Адаптив 375 px ============================
+@media (max-width: 375px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+
+        .info {
+            position: relative;
+            max-width: 345px;
+            h1 {
+                margin-bottom: 13px;
+                font-size: 22px;
+                line-height: 26.4px;
+            }
+            margin-bottom: 126px;
+        }
+
+        .info_image {
+            position: relative;
+            max-width: 330px;
+            top: 0%;
+            left: 2%;
+            grid-row: 3/4;
+            grid-column: 1/2;
+            margin-bottom: 10px;
+        }
+
+        .form_container {
+            grid-template-columns: 345px;
+            margin-bottom: 49px;
+
+            .form_img {
+                top: -81px;
+                left: 81px;
+            }
+
+            .form {
+                .header {
+                    p {
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+
+                }
+
+                .fields {
+                    label {
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                    .fields_input{
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+
+                    .buttonsubmit {
+                        font-size: 20px;
+                        line-height: 24.2px;
+                    }
+                }
+
+                .links {
+                    a{
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                    p {
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                }
+
+                .links_buttons {
+
+
+                    button {
+
+                        img {}
+                    }
+
+                }
+            }
+        }
+    }
+}

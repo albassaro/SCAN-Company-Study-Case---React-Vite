@@ -1,0 +1,44 @@
+@import-normalize;
+
+//================================== ШРИФТЫ И ЦВЕТА ==================================
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: Ferry;
+  src: local("Ferry"),url('./fonts/ferry_black.otf') format('opentype');
+  font-weight: 900;
+}
+
+$base-color-01:#029491;
+$base-color-02:#000000;
+$base-color-03:#FFFFFF;
+
+$additional-color-01:#FFB64F;
+$additional-color-02:#7CE3E1;
+$additional-color-03:#5970FF;
+
+
+//================================== ОБЩИЕ СТИЛИ ДЛЯ ЭЛЕМЕНТОВ ==================================
+
+html,body{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16.94px;
+}
+
+.main{
+  flex: 1 1 auto;
+}
+
+.wrapper{
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media screen and (max-width:375px){
+    max-width: 375px;
+  }
+}
