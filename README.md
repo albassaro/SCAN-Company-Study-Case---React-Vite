@@ -67,7 +67,7 @@
 <br>
 
 ### Использованные библиотеки
-  - проект писался на сборке React + WebPack через react-ctrate-app
+  - проект был пересобран на ReactJS + Vite
   - Redux + Redux Toolkit
   - react-router-dom - для роутинга
   - препроцессор scss
