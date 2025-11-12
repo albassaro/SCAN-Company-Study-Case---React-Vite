@@ -8,7 +8,7 @@ import { getTokenAsync } from "../redux/slices/user/user.actions"
 import { useNavigate } from "react-router";
 
 import global from "../styles/globalStyles.module.scss";
-import autor from "../styles/pages/autorization.module.scss";
+import auth from "../styles/pages/autorization.module.scss";
 
 
 function Autorization() {
@@ -62,14 +62,14 @@ function Autorization() {
   }
 
   return (
-    <div className={`${global.wrapper} ${autor.container}`}>
-      <div className={autor.info}>
+    <div className={`${global.wrapper} ${auth.container}`}>
+      <div className={auth.info}>
         <h1>Для оформления подписки на тариф, необходимо авторизоваться.</h1>
       </div>
-      <div className={autor.info_image}><img src="./assets/images/Authorization-characters-image.svg" alt="" /></div>
-      <div className={autor.form_container}>
+      <div className={auth.info_image}><img src="./assets/images/Authorization-characters-image.svg" alt="" /></div>
+      <div className={auth.form_container}>
         <img
-          className={autor.form_img}
+          className={auth.form_img}
           src="./assets/icons/Autorization-lock-icon.svg"
           alt=""
         />
@@ -78,23 +78,23 @@ function Autorization() {
           initialValues={{ login: "", password: "" }}
           onSubmit={onSubmit}>
             
-            <Form className={autor.form}>
-              <div className={autor.header}>
+            <Form className={auth.form}>
+              <div className={auth.header}>
                 <p>Войти</p>
                 <p>Зарегистрироваться</p>
               </div>
-              <div className={autor.fields}>
+              <div className={auth.fields}>
                 <label htmlFor="login">Логин или номер телефона:</label>
                 <Field
                   name="login"
                   type="text"
                   validate={validateLogin}
-                  className={autor.fields_input}
+                  className={auth.fields_input}
                   />
                 <ErrorMessage
                   component="span"
                   name="login"
-                  className={autor.errorMessage}
+                  className={auth.errorMessage}
                 />
                 <label htmlFor="password">Пароль:</label>
                 <Field
@@ -102,21 +102,21 @@ function Autorization() {
                   type="password"
                   autoComplete="off"
                   validate={validatePassword}
-                  className={autor.fields_input}
+                  className={auth.fields_input}
                 />
                 <ErrorMessage
                   component="span"
                   name="password"
-                  className={autor.errorMessage}
+                  className={auth.errorMessage}
                 />
-                <button type="submit" disabled={state.formSubmitClicked} className={autor.buttonsubmit}>
+                <button type="submit" disabled={state.formSubmitClicked} className={auth.buttonsubmit}>
                   Войти
                 </button>
               </div>
-              <div className={autor.links}>
+              <div className={auth.links}>
                 <a>Восстановить пароль</a>
                 <p>Войти через:</p>
-                <div className={autor.links_buttons}>
+                <div className={auth.links_buttons}>
                   <button disabled>
                     <img src="./assets/Authorization-form-button1.svg" alt="" />
                   </button>

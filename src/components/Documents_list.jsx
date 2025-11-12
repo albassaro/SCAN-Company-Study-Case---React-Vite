@@ -67,7 +67,7 @@ function DocumentsList() {
     // текущие страницы для отрисовки
     const currentRenderDocument = fullDocumentsArray.slice(firstDocumentIndex, lastDocumentIndex)
 
-    // debugger
+    
     return (
         <>
             <h3>Список документов </h3>
