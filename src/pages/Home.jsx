@@ -74,11 +74,8 @@ function Home() {
                   <li>Безопасная сделка</li>
                   <li>Поддержка 24/7</li>
               </div>
-              <div className={
-                userIsOnline
-                ? home.tarifs_button
-                : `${home.tarifs_button} ${home.tarifs_button__blue}`}>
-                <button>{userIsOnline?'Перейти в личный кабинет':'Подробнее'}</button>
+              <div className={userIsOnline ? home.tarifs_button: `${home.tarifs_button} ${home.tarifs_button__blue}`}>
+                <button>{userIsOnline ?'Перейти в личный кабинет':'Подробнее'}</button>
               </div>
             </div>
           </div>

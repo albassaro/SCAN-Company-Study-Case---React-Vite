@@ -79,14 +79,14 @@ function ResultSearchPage() {
           </div>
           {state.search.isLoading
             ?  
-              <>
+              <div className={resSearch.spin_wrapper}>
                 <img className={resSearch.logo_spin} src="../assets/icons/download-icon.svg"alt="loading..."/>
                 <span className={resSearch.logo_spin_text}>Загружаем данные </span>
-              </>
+              </div>
             : hystogramData.length !== 0 ? hystogramData[0].data[0].date ? (<SliderResultPage props={hystogramData}/>) 
-              : <span className={resSearch.logo_spin_text}>Статей не найдено</span> 
-              : <span className={resSearch.logo_spin_text}>Статей не найдено</span>
-          }
+               : <span className={resSearch.logo_spin_text}>Статей не найдено</span> 
+               : <span className={resSearch.logo_spin_text}>Статей не найдено</span>
+           }
           
         </div>
       </div>

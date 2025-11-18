@@ -4,7 +4,6 @@ import { createAsyncThunk} from "@reduxjs/toolkit";
 export const getTokenAsync = createAsyncThunk(
     'LogIn/getTokenAsync',
     async(action, thunkAPI) =>{
-        console.log("вошел в запрос")
         try{
                 const responce = await fetch('https://gateway.scan-interfax.ru/api/v1/account/login',
             {

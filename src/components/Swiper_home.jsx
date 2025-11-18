@@ -8,7 +8,7 @@ import "swiper/scss/navigation";
 import "swiper/css/grid"
 
 import global from "../styles/globalStyles.module.scss";
-import sw from "../styles/components/slider_homepage.module.scss"
+import styles from "../styles/components/slider_homepage.module.scss"
 
 
 function SliderHomePage() {
@@ -61,31 +61,23 @@ function SliderHomePage() {
 
   return (
     <Swiper
-      className={sw.container}
+      className={styles.mySwiper}
       modules={[Navigation]}
       spaceBetween={0}
       {...isDesktop ? {slidesPerView: 3} : isMobile ? {slidesPerView: 1} : {slidesPerView: 3}}
-      navigation = {{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }}
+      navigation 
       scrollbar={{ draggable: true }}
       rewind = {true}
     > 
-    
-    <div className={sw.button_next}></div>
-    <span className="swiper-button-next"></span>
-    <div className={sw.button_prev}></div>
-    <span className="swiper-button-prev"></span>
 
     { cardsContext.map((card, index)=>
-        <SwiperSlide className={sw.swiper_slide} key={index}>
-        <div className={sw.swiper_wrapper}>
-          <div className={sw.item}>
-            <div className={sw.item_logo}>
+        <SwiperSlide className={styles.swiper_slide} key={index}>
+        <div className={styles.swiper_wrapper}>
+          <div className={styles.item}>
+            <div className={styles.item_logo}>
               {card.image}
             </div>
-            <div className={sw.item_text}>
+            <div className={styles.item_text}>
               {card.text}
             </div>
           </div>

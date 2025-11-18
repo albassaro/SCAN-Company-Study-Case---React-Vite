@@ -23,8 +23,10 @@ function DocumentsList() {
 
 //  Весь массив с документами 
   const [fullDocumentsArray, setfullDocumentsArray] = useState([]);
+
 //   Текущий (последний) отображаемый документ
   const [currentDocument] = useState(0);
+
 //   Кол-во документов отображаемое за раз
   const [documentsPerPage, setdocumentsPerPage] = useState(itemsOnPage);
 
@@ -45,6 +47,7 @@ function DocumentsList() {
             } 
             else {
                 setfullDocumentsArray(result)
+
             }        
         })
         .catch((error)=>{
@@ -53,6 +56,13 @@ function DocumentsList() {
     }else return
     
   },[userSearchObjects] )
+
+//  Попытка избавиться от xml-тегов
+  const removeHtmlTags = (string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(string, 'text/html');
+    return doc.body.textContent || '';
+  }
 
 
     // сортировка полного массива данных по дате
@@ -88,10 +98,9 @@ function DocumentsList() {
                             </div>
                             <div className={`${resSearch.documentslist_item_content}`}>
                                 <img src="./assets/images/ResultSearch_doc_image.png" alt="" />
-                                <p>{parse(item.ok.content.markup)}</p>
+                                <p>{removeHtmlTags(item.ok.content.markup)}</p>
                             </div>
                             <div className={`${resSearch.documentslist_item_button}`}>
-                                {console.log(item.ok.url)}
                                 <a href={item.ok.url} target="_blank">Читать в источнике</a>
                                 <span>{item.ok.attributes.wordCount} слов(-а)</span>
                             </div>

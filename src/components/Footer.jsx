@@ -3,7 +3,6 @@ import f from "../styles/components/footer.module.scss";
 import global from "../styles/globalStyles.module.scss";
 
 function Footer() {
-  console.log("отрисовка футера");
   return (
     <footer className={f.footer}>
       <div className={`${global.wrapper} ${f.footer_content}`}>

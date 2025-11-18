@@ -1,101 +1,88 @@
-@use '/src/styles/globalStyles.module.scss' as *;
+@use '/src/styles/globalStyles.module.scss'as *;
 
-.container{
-    position: static;
-    width: fit-content;
-    .swiper_slide {
-        
-        .generalSummory_table_content {
-            padding: 2px 18px;
-            margin: 18px 0px;
-            border-right: 2px solid rgba($color: $base-color-01, $alpha: 0.4);
+.MySliderWrapper {
+    position: relative;
+    overflow: hidden;
 
-            p {
-                font-size: 18px;
-                line-height: 21.7px;
-                &:not(:last-child) {
-                    margin-bottom: 26px;
+    .MySlider {
+        position: relative;
+
+        :global(.swiper-button-next),
+        :global(.swiper-button-prev) {
+            color: rgb(199, 189, 189);
+            width: 38px;
+            height: 38px;
+        }
+
+        :global(.swiper-button-prev) {
+            left: -10px;
+        }
+
+        :global(.swiper-button-next) {
+            right: -10px;
+        }
+
+        :global(.swiper-button-prev)::after,
+        :global(.swiper-button-next)::after {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .swiper_slide {
+            .generalSummory_table_content {
+                padding: 2px 18px;
+                margin: 18px 0px;
+                border-right: 2px solid rgba($color: $base-color-01, $alpha: 0.4);
+
+                p {
+                    font-size: 18px;
+                    line-height: 21.7px;
+
+                    &:not(:last-child) {
+                        margin-bottom: 26px;
+                    }
+
+                    text-align: center;
                 }
-
-                text-align: center;
             }
         }
     }
 }
 
-.button_next+span{
-    right: 15%;
-    top: 51.5em;
-    &::after{
-        font-size: 29px;
-        font-weight: 900;
-    }
-}
-.button_prev+span{
-    left: 15%;
-    top: 51.5em;
-    &::after{
-        font-size: 29px;
-        font-weight: 900;
-    }
-}
 
 //=================== Мобильная верстка 375px ==========================
 
 @media (max-width: 375px) {
-    .container {
-        width: 280px;
-        position: static;
-    }
 
+    .MySliderWrapper {
+        height: 80px;
 
-    .generalSummory_table_content {
-        display: flex;
-        justify-content: space-between;
-        padding: 2px 18px 2px 15px !important;
-        margin: 12px 0px !important;
-        border-right: none !important;
+        .MySlider {
+            position: static;
+            height: 100%;
 
-        p {
-            margin-bottom: 0px !important;
-            font-size: 18px;
-            line-height: 21.7px;
-            &:nth-child(1n+2) {
-                transform: translate(-25px, 0px);
+            :global(.swiper-button-prev),
+            :global(.swiper-button-next) {
+                top: 3.5rem;
+            }
+        }
+
+        .generalSummory_table_content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 5px 0px 23px !important;
+            margin: 33px 0px 0px 0px !important;
+            border-right: none !important;
+
+            p {
+                margin-bottom: 0px !important;
+                font-size: 18px;
+                line-height: 21.7px;
+
+                &:nth-child(1n+2) {
+                    transform: translate(-25px, 0px);
+                }
             }
         }
     }
-    .button_next+span {
-        right: 3%;
-        top: 51.5em;
-    }
-    
-    .button_prev+span {
-        left: 3%;
-        top: 51.5em;
-    
-        &::after {
-            font-size: 29px;
-            font-weight: 900;
-        }
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

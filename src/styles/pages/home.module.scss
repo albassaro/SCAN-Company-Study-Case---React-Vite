@@ -59,7 +59,13 @@
 
 //=================== Третья часть ==========================
 .secondimage{
+    
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
     margin-bottom: 107px;
+    
     img{
         position: relative;
     }
@@ -224,7 +230,7 @@
                 button{
                     font-size: 20px;
                     line-height: 24px;
-                    padding: 17px 45px;
+                    padding: 17px 20px;
                     border-radius: 5px;
                     border: none;
                     background-color: #D2D2D2;
@@ -270,7 +276,6 @@
         }
         .searchservice_image{
             padding: 0px;
-            // max-height: 330px;
             img{
                 max-height: 330px;
                 max-width: 345px;

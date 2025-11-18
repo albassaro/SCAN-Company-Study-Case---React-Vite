@@ -12,12 +12,11 @@
         display: flex;
         justify-content: space-between;
         background-color: $base-color-01;
-        
+        align-items: center;
+
         .footer_logo {
 
             img{
-                transform: translate(0px, -10px);
-
                 @media (max-width: 375px) {
                     max-width: 111px ;
                 }

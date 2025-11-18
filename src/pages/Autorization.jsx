@@ -18,8 +18,6 @@ function Autorization() {
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
-    
-    console.log(state);
 
   const validateLogin = (value) => {
     let error;
@@ -52,7 +50,6 @@ function Autorization() {
       if(data.errorCode && data.message){
         alert("Ошибка!!!" + " " + `${data.message}` + "." + `\n` +  "Проверьте правильность введенных данных и повторите вход в личный кабинет"); 
       }else {
-        console.log("redirect");
         navigate('/search'); 
       }
     })
